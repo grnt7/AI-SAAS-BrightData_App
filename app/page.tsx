@@ -64,7 +64,7 @@ export default function Home() {
                 <SignInButton mode="modal" forceRedirectUrl="/dashboard">
                   <Button
                     size="lg"
-                    className="text-base px-8 py-6 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 shadow-lg hover:shadow-xl hover:shadow-blue-500/25 transition-all duration-300 group border-0"
+                    className="text-base px-8 py-6 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 shadow-lg hover:shadow-xl hover:shadow-blue-500/25 transition-all duration-300 group border-0 cursor-pointer"
                   >
                     <Search className="w-5 h-5 mr-2 group-hover:rotate-12 transition-transform" />
                     Generate My Report
@@ -77,9 +77,9 @@ export default function Home() {
                 <Link href="/dashboard">
                   <Button
                     size="lg"
-                    className="text-base px-8 py-6 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 shadow-lg hover:shadow-xl hover:shadow-blue-500/25 transition-all duration-300 group border-0"
+                    className="text-base px-8 py-6 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 shadow-lg hover:shadow-xl hover:shadow-blue-500/25 transition-all duration-300 group border-0 "
                   >
-                    <Search className="w-5 h-5 mr-2 group-hover:rotate-12 transition-transform" />
+                    <Search className="w-5 h-5 mr-2 group-hover:rotate-12 transition-transform " />
                     Generate My Report
                     <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
                   </Button>
@@ -244,7 +244,7 @@ export default function Home() {
                 </div>
                 <Link href="/pricing">
                   <Button
-                    className="w-full mt-6 bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 border-0"
+                    className="w-full mt-6 bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 border-0 cursor-pointer"
                     size="lg"
                   >
                     Subscribe to Starter
@@ -289,7 +289,7 @@ export default function Home() {
                 </div>
                 <Link href="/pricing">
                   <Button
-                    className="w-full mt-6 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 border-0"
+                    className="w-full mt-6 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 border-0 cursor-pointer"
                     size="lg"
                   >
                     Subscribe to Pro

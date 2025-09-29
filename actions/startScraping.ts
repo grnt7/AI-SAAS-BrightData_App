@@ -74,6 +74,14 @@ const startScraping = async (
   const ENDPOINT = `${process.env.NEXT_PUBLIC_CONVEX_SITE_URL}${ApiPath.Webhook}?jobId=${jobId}`;
   const encodedEndpoint = encodeURIComponent(ENDPOINT);
 
+
+  // call to brightdata...
+  const datasetId = process.env.BRIGHTDATA_DATASET_ID;
+
+  if(!datasetId) {
+    throw new Error("BRIGHTDATA_DATASET_ID is not set");
+  }
+
   const url = `https://api.brightdata.com/datasets/v3/trigger?dataset_id=gd_m7dhdot1vw9a7gc1n&endpoint=${encodedEndpoint}&format=json&uncompressed_webhook=true&include_errors=true`;
 
   const perplexityPrompt = buildPerplexityPrompt(prompt);

@@ -30,7 +30,7 @@ export function KeyInsightsGrid({ seoReport }: KeyInsightsGridProps) {
                 Key Strengths
               </CardTitle>
               <CardDescription className="text-base">
-                Areas where you're performing well
+              Areas where you&apos;re performing well
               </CardDescription>
             </div>
           </div>

@@ -28,7 +28,7 @@ export async function POST(req: Request) {
     id: string;
   } = await req.json();
 
-  // Get the SEO report from the database
+  // Step 1: Get the SEO report from the database
   let seoReportData = null;
   let systemPrompt = `You are an AI assistant helping users understand their SEO report. 
   
@@ -48,7 +48,8 @@ export async function POST(req: Request) {
 CURRENT SEO REPORT DATA:
 ${JSON.stringify(seoReportData, null, 2)}
 
-You have access to comprehensive SEO analysis data for "${seoReportData.meta?.entity_name || "the entity"}" (${seoReportData.meta?.entity_type || "unknown type"}).
+You have access to comprehensive SEO analysis data for "${seoReportData.meta?.entity_name || "the entity"}" 
+(${seoReportData.meta?.entity_type || "unknown type"}).
 
 Key areas you can help with:
 - Overall SEO performance and confidence score
@@ -76,6 +77,8 @@ Provide specific, data-driven insights based on the actual report data. When ref
     messages: convertToModelMessages(messages),
     system: systemPrompt,
     tools: {
+      //Can change tools using ctrl spacebar
+      //can chnage model to gemini or others
       web_search: openai.tools.webSearch({
         searchContextSize: "high",
       }),

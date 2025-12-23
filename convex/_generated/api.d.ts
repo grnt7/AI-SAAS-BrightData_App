@@ -15,6 +15,7 @@ import type {
 } from "convex/server";
 import type * as analysis from "../analysis.js";
 import type * as http from "../http.js";
+import type * as monitoring from "../monitoring.js";
 import type * as scrapingJobs from "../scrapingJobs.js";
 
 /**
@@ -28,6 +29,7 @@ import type * as scrapingJobs from "../scrapingJobs.js";
 declare const fullApi: ApiFromModules<{
   analysis: typeof analysis;
   http: typeof http;
+  monitoring: typeof monitoring;
   scrapingJobs: typeof scrapingJobs;
 }>;
 export declare const api: FilterApi<

@@ -71,8 +71,8 @@ const startScraping = async (
   }
 
   // Include the job ID in the webhook URL as a query parameter
-  const ENDPOINT = `${process.env.NEXT_PUBLIC_CONVEX_SITE_URL}${ApiPath.Webhook}?jobId=${jobId}`;
-  const encodedEndpoint = encodeURIComponent(ENDPOINT);
+  const WEBHOOK_URL = `${process.env.NEXT_PUBLIC_CONVEX_SITE_URL}${ApiPath.Webhook}?jobId=${jobId}`;
+  const encodedWebhookUrl = encodeURIComponent(WEBHOOK_URL);
 
 
   // call to brightdata...
@@ -82,7 +82,14 @@ const startScraping = async (
     throw new Error("BRIGHTDATA_DATASET_ID is not set");
   }
 
-  const url = `https://api.brightdata.com/datasets/v3/trigger?dataset_id=gd_m7dhdot1vw9a7gc1n&endpoint=${encodedEndpoint}&format=json&uncompressed_webhook=true&include_errors=true`;
+  // Properly encode the endpoint, which is the webhook URL
+  // const encodedEndpoint = encodeURIComponent(encodedWebhookUrl);
+  const encodedEndpoint = encodeURIComponent(WEBHOOK_URL);
+
+  // const url = `https://api.brightdata.com/datasets/v3/trigger?dataset_id=${datasetId}&endpoint=${encodedEndpoint}&format=json&uncompressed_webhook=true&include_errors=true`;
+
+  const url = `https://api.brightdata.com/datasets/v3/trigger?dataset_id=${datasetId}&endpoint=${encodeURIComponent(WEBHOOK_URL)}&format=json&uncompressed_webhook=true&include_errors=true`;
+
 
   const perplexityPrompt = buildPerplexityPrompt(prompt);
 

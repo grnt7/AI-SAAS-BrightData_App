@@ -21,7 +21,7 @@ export function getSpinnerColor(status: string): string {
 export function getProgressPercentage(status: string): string {
   const progressMap = {
     pending: "0%",
-    running: "25%",
+    running: "25%", // Gets stuck here?
     analyzing: "75%",
     completed: "100%",
     failed: "Error",

@@ -61,6 +61,7 @@ export const runAnalysis = internalAction({
 
       console.log("Prompt saved for job:", args.jobId);
 
+      // It auto uses process.env.OPEN_AI_KEY
       const { object: seoReport } = await generateObject({
         model: openai("gpt-4o"),
         system: systemPrompt(),

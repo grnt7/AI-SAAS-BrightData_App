@@ -25,16 +25,18 @@ function Dashboard() {
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    
     if (!prompt || isLoading) return;
 
     setIsLoading(true);
     try {
       const response = await startScraping(prompt, undefined, country);
-      if (response.ok) {
+
+      if (response && response.ok && response.data) {
         console.log(response.data);
         const snapshotId = response.data.snapshot_id;
         router.push(`/dashboard/report/${snapshotId}`);
-      } else {
+      } else if (response && response.error) {
         console.error(response.error);
       }
     } finally {
@@ -96,7 +98,7 @@ function Dashboard() {
                     <Button
                       type="submit"
                       size="lg"
-                      className="h-14 px-6 md:px-8 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 hover:from-blue-700 hover:via-purple-700 hover:to-pink-700 border-0 shadow-lg hover:shadow-xl hover:shadow-purple-500/25 transition-all duration-300 group font-semibold w-full md:w-auto"
+                      className="h-14 px-6 md:px-8 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 hover:from-blue-700 hover:via-purple-700 hover:to-pink-700 border-0 shadow-lg hover:shadow-xl hover:shadow-purple-500/25 transition-all duration-300 group font-semibold w-full md:w-auto cursor-pointer"
                       disabled={isLoading || !prompt.trim()}
                     >
                       {isLoading ? (

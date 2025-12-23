@@ -227,7 +227,7 @@ export default function AIChat({ seoReportId }: { seoReportId: string }) {
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
                 placeholder="Ask about your SEO report..."
-                className="flex-1 h-11 bg-white border-gray-200 rounded-xl focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500/20"
+                className="flex-1 h-11 bg-white border-gray-200 text-gray-900 rounded-xl focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500/20"
                 disabled={isTyping}
               />
               <Button

@@ -102,7 +102,7 @@ export default function Home() {
               insights, we&apos;ve got the perfect plan for you.
             </p>
           </div>
-
+       
           <div className="grid md:grid-cols-2 gap-8 lg:gap-12">
             {/* Starter Plan Card */}
             <Card className="relative overflow-hidden border-2 border-blue-200 dark:border-blue-800 hover:border-blue-400 dark:hover:border-blue-600 transition-all duration-300 hover:shadow-xl hover:shadow-blue-500/10 group bg-gradient-to-br from-blue-50/50 to-cyan-50/50 dark:from-blue-950/50 dark:to-cyan-950/50">

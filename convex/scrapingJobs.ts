@@ -127,6 +127,7 @@ export const getJobById = query({
   ),
   handler: async (ctx, args) => {
     const job = await ctx.db.get(args.jobId);
+    
     if (job && job.seoReport !== undefined) {
       // Validate on read to protect across Convex calls
       const result = seoReportSchema.safeParse(job.seoReport);
@@ -152,6 +153,7 @@ export const completeJob = internalMutation({
     return null;
   },
 });
+
 
 export const failJob = mutation({
   args: {

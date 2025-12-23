@@ -1,7 +1,7 @@
 import { auth } from "@clerk/nextjs/server";
 import { redirect } from "next/navigation";
 
-async  function layout({ children }: { children: React.ReactNode }) {
+async function layout({ children }: { children: React.ReactNode }) {
     const { has } =  await auth();
 
     const hasStarterPlan = has({ plan: "starter"});

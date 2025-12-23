@@ -8,11 +8,14 @@ export default defineSchema({
 
     // User input
     originalPrompt: v.string(),
-    // Saved GPT analysis prompt for debugging
+    
+    // Saved data from BD Perplexity Scraper 
     analysisPrompt: v.optional(v.string()),
 
-    // Job tracking
+    // BrightData  for job tracking
     snapshotId: v.optional(v.string()),
+    
+    // BrightData Job Status 
     status: v.union(
       v.literal("pending"),
       v.literal("running"),
@@ -23,7 +26,7 @@ export default defineSchema({
 
     // Results (optional, filled when webhook receives data)
     results: v.optional(v.array(v.any())),
-    seoReport: v.optional(v.any()), // Structured SEO report from AI analysis
+    seoReport: v.optional(v.any()), // Structured SEO report from GPT AI analysis
     error: v.optional(v.string()),
 
     // Metadata

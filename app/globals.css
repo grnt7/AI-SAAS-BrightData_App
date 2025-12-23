@@ -4,6 +4,48 @@
 
 @custom-variant dark (&:is(.dark *));
 
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ... other styles ... */
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    /* ... other CSS variables ... */
+  }
+
+  body {
+    /* **********************************************
+      * CRITICAL FIX: ADD EMOJI FONT FALLBACKS    *
+      **********************************************
+    */
+    font-family:
+      /* 1. Use your custom fonts (Geist) */
+      var(--font-geist-sans),
+      var(--font-geist-mono),
+      
+      /* 2. Generic System Fonts */
+      system-ui,
+      -apple-system,
+      BlinkMacSystemFont,
+      "Segoe UI",
+      "Roboto",
+      "Helvetica Neue",
+      "Arial",
+      
+      /* 3. EMOJI Fallbacks for Universal Rendering */
+      "Apple Color Emoji", /* For macOS/iOS */
+      "Segoe UI Emoji",   /* For Windows */
+      "Segoe UI Symbol",
+      "Noto Color Emoji",
+      sans-serif; /* Final generic fallback */
+    
+    /* ... other body styles ... */
+  }
+}
+
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);

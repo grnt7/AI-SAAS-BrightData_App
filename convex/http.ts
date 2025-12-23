@@ -1,4 +1,5 @@
 // convex/http.ts
+// convex/http.ts
 import { httpRouter } from "convex/server";
 import { httpAction } from "./_generated/server";
 import { api, internal } from "./_generated/api";
@@ -11,6 +12,8 @@ export enum ApiPath {
   Webhook = "/api/webhook",
 }
 
+
+// Webhook
 http.route({
   path: ApiPath.Webhook,
   method: "POST",
@@ -98,3 +101,15 @@ http.route({
 });
 
 export default http;
+//Webhook endpoint is reachable
+
+// http.route({
+//   path: "/api/webhook/test",
+//   method: "GET",
+//   handler: httpAction(async (ctx, req) => {
+//     return new Response("helloworld!", { 
+//       status: 200,
+//       headers: { "Content-Type": "text/plain" }
+//     });
+//   }),
+// });

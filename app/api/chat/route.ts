@@ -4,6 +4,9 @@ import { ConvexHttpClient } from "convex/browser";
 import { api } from "@/convex/_generated/api";
 import { auth } from "@clerk/nextjs/server";
 
+//tell Next.js this route must be handled at runtime:
+export const dynamic = "force-dynamic";
+
 // Allow streaming responses up to 30 seconds
 export const maxDuration = 30;
 
